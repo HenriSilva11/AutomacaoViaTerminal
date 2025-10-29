@@ -14,9 +14,9 @@ print("saida do comando: ", ping.stdout)
 
 #envio para email
 
-email_remetente = "pequenohenri72@gmail.com"
-senha_remetente = "nufr mcxw cptt towj"
-email_destino = "victorribeirodesouza10@gmail.com"
+email_remetente = "SEU_EMAIL"
+senha_remetente = "SUA_SENHA"
+email_destino = "EMAIL_DESTINO"
 
 msg = MIMEText(f"Resultado do ping:\n\n{resultado_ping}")
 msg["subject"] = "Resultado do ping"
@@ -29,6 +29,7 @@ try:
    server.login(email_remetente, senha_remetente)
    server.send_message(msg)
    server.quit()
+   print("Email enviado com sucesso!")
 except Exception as e:
     print("Erro ao enviar o email: ", e)
 
