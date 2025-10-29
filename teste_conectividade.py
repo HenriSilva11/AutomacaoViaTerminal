@@ -1,6 +1,6 @@
 import os
 
-print("diretório ataul: ", os.getcwd())
+print("diretório atual: ", os.getcwd())
 
 arquivos = os.listdir()
 
