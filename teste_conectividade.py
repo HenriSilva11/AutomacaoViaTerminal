@@ -10,7 +10,12 @@ import subprocess
 ping = subprocess.run(["ping", "google.com"], capture_output=True, text=True)
 resultado_ping = ping.stdout
 
-print("saida do comando: ", ping.stdout)
+#verificar status e printar no terminal
+
+if ping.returncode == 0:
+    print("conexão ativa!", ping.stdout)
+else:
+        print("sem conexão!", ping.stdout)
 
 #envio para email
 
@@ -34,12 +39,7 @@ except Exception as e:
     print("Erro ao enviar o email: ", e)
 
 
-#verificar status e printar no terminal
 
-comando = subprocess.run(["ping", "-n", "1", "google.com"])
 
-if comando.returncode == 0:
-    print("conexão ativa!")
-else:
-    print("sem conexão com a internet. ")
+
 
